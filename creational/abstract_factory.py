@@ -135,18 +135,9 @@ if __name__ == '__main__':
 """
 Output
 
-Hello
-Bon Jour
-Creating database connection
-creating postgres connection
-Creating table
-creating table test in mysql
-Inserting record in table
-insert record in mysql - test_record
-Creating database connection
-creating mysql connection
-Creating table
-creating table in mysql
-Inserting record in table
-insert record in mysql
+Manager class is MysqlManager
+Database class is Mysqldb
+applying mysql filtering
+applying mysql ordering
+
 """

@@ -24,7 +24,8 @@ class BaseHandler(ABC):
     def handle(self,):
         result = self.get_ip()
         if result is None and self._next_handler is not None:
-            self._next_handler.handle()
+            return self._next_handler.handle()
+        return result
 
     @abstractmethod
     def get_ip(self):
@@ -52,19 +53,5 @@ if __name__ == '__main__':
 
 """
 Output
-
-Hello
-Bon Jour
-Creating database connection
-creating postgres connection
-Creating table
-creating table test in mysql
-Inserting record in table
-insert record in mysql - test_record
-Creating database connection
-creating mysql connection
-Creating table
-creating table in mysql
-Inserting record in table
-insert record in mysql
+182.68.28.91
 """
