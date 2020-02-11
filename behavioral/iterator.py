@@ -1,13 +1,13 @@
 from collections.abc import Iterable, Iterator
-from typing import List, Any
+from typing import Any
 
 """
-Command Pattern
+Iterator Pattern
 
-- Provides a command based interface to execute instead of message oriented interface
-- Can Provide undo operations.
-- Encapsulates all information needed to perform an action or trigger an event
-- Example - Move Command providing move and undo operations.
+- Allow sequential traversal of complex data structure
+- Allow you to define generator for iterations.
+- Example - Iterator for odd number, even number, catalan number, prime number.
+- Example - Iterator to traverse list of dict sorted by a tuple of keys.
 """
 
 # Example 1
@@ -44,6 +44,20 @@ class AlphabeticalIterator(Iterator):
 
         return value
 
+# Example 2
+
+
+def count_to(count):
+    """Counts by word numbers, up to a maximum of five"""
+    numbers = ["one", "two", "three", "four", "five"]
+    for number in numbers[:count]:
+        yield number
+
+
+# Test the generator
+count_to_two = lambda: count_to(2)
+count_to_five = lambda: count_to(5)
+
 
 if __name__ == '__main__':
     collection = WordsCollection([])
@@ -56,7 +70,10 @@ if __name__ == '__main__':
     print("")
 
     print("Reverse traversal:")
-    print("\n".join(collection.get_reverse_iterator()), end="")
+    print("\n".join(collection.get_reverse_iterator()))
+
+    for number in count_to_five():
+        print(number)
 
 """
 Output
