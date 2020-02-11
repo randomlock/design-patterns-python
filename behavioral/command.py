@@ -1,15 +1,12 @@
 from abc import ABC, abstractmethod
 
-import requests
-
 """
-Chain of Responsibility
+Command Pattern
 
-- Provides a series of handler to process input. You can either return from first successful handler
-or pass it to next handler to further process the input.
-- The caller doesn't need to worry about any other additional handler if previous handle fails to process input.
-- Example - If you need to get IP Address and you have multiple API's to get a host ip. Then if first API fail
-to fetch IP, you can use second API and try again and so on (Note: You can also use multithreading for this scenario)
+- Provides a command based interface to execute instead of message oriented interface
+- Can Provide undo operations.
+- Encapsulates all information needed to perform an action or trigger an event
+- Example - Move Command providing move and undo operations.
 """
 
 # Example 1
