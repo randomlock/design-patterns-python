@@ -29,7 +29,6 @@ class BaseHandler(ABC):
 
     @abstractmethod
     def get_ip(self):
-        """Compare passed value to predefined interval"""
         pass
 
 
