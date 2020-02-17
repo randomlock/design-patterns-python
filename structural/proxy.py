@@ -40,6 +40,7 @@ class ImageViewer(ABC):
 class HighResImageViewer(ImageViewer):
 
     def __init__(self, file_name):
+        # fetch image from a remote machine and do some other heavy initialization.
         self.file_name = file_name
         self.load_image(file_name)
 
@@ -53,6 +54,8 @@ class HighResImageViewer(ImageViewer):
 class HighResImageViewerProxy(ImageViewer):
 
     def __init__(self, file_name):
+        # for lazy loading dont instantiate the service class in constructor. Construct is when
+        # it is evaluated.
         self.file_name = file_name
         self.images = {}
 
