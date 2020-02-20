@@ -6,6 +6,12 @@ object without changing its implementation
 - Example You have have class that display paragraph. Now you want to make it bold or italic or
 bold italic. Instead of altering the existing class, you can create decorator class that implement
 similar method and do its thing and call other decorator method
+- Decorator is also called "Smart Proxy." This is used when you want to add functionality to an 
+object, but not by extending that object's type. This allows you to do so at runtime.
+- Decorator and Proxy have similar structures, but very different intents. Both patterns are built 
+on the composition principle, where one object is supposed to delegate some of the work to another. 
+The difference is that a Proxy usually manages the life cycle of its service object on its own, 
+whereas the composition of Decorators is always controlled by the client.
 - Example You want to send sms, email and message to slack in any combination i.e you can choose sms
 + email or sms+slack or sms+slack+email. You can create an adapter(inheritence) for all these but
 there will be two many adapters.
